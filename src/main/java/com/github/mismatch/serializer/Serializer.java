@@ -15,7 +15,7 @@ public class Serializer {
 	public byte[] serialize(Object object) {
 		Unit unit = unitFactory.get(object);
 		if (null == unit) {
-			throw new IllegalArgumentException("Unable to serialize " + object);
+			throw new SerializationException("Unable to serialize " + object);
 		}
 		ByteBuffer buffer = ByteBuffer.allocate(unit.length());
 		unit.writeTo(buffer);
