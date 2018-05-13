@@ -8,7 +8,7 @@ Timeout: 10 min per iteration\
 Threads: 1 thread, will synchronize iterations\
 Benchmark mode: Throughput, ops/time
 
-## Serialization of [Album](src/main/java/com/github/mismatch/serializer/dto/Album.java) Album object (standard types)
+## Serialization of [Album](src/main/java/com/github/mismatch/serializer/dto/Album.java) object (String and List fields)
 
 Benchmark | Mode | Cnt | Score | Error | Units
 --------- | ---- | --- | ----- | ----- | -----
@@ -16,7 +16,7 @@ JaBASerializer | thrpt | 75 | 123303,156 | ± 3616,227 | ops/s
 Kryo | thrpt | 75 | 42632,562 | ± 1559,859 |  ops/s
 Protobuf | thrpt | 75 | 691276,430 | ± 19205,396 |  ops/s
 
-## Serialization of [Parcel](src/main/java/com/github/mismatch/serializer/dto/Parcel.java) Parcel object (custom types)
+## Serialization of [Parcel](src/main/java/com/github/mismatch/serializer/dto/Parcel.java) object (fields have custom types)
 
 Benchmark | Mode | Cnt | Score | Error | Units
 --------- | ---- | --- | ----- | ----- | -----
