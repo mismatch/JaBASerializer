@@ -1,11 +1,11 @@
 package com.github.mismatch.serializer;
 
+import com.github.mismatch.serializer.aux.SimpleTestClass;
 import com.github.mismatch.serializer.converters.Converters;
 import com.github.mismatch.serializer.units.UnitFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -94,17 +94,6 @@ public class SerializerTest {
 				new SimpleTestClass(-100, (byte) 69), new SimpleTestClass(8082, (byte) -33));
 
 		assertArrayEquals(serializer.serialize(ct), serializer.serialize(ct));
-	}
-
-
-	static class SimpleTestClass {
-		private int a;
-		private byte bb;
-
-		SimpleTestClass(int a, byte bb) {
-			this.a = a;
-			this.bb = bb;
-		}
 	}
 
 	static class CompositeTestClass {
