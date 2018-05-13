@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_outer_classname = "ParcelProtos";
+option java_package = "com.github.mismatch.serializer.dto";
+
+message Parcel {
+    enum DimensionUnit {
+        M = 0;
+        CM = 1;
+        IN = 2;
+    }
+
+    enum WeightUnit {
+        KG = 0;
+        LB = 1;
+    }
+
+    message Address {
+        string country = 1;
+        string town = 2;
+        string postcode = 3;
+    }
+
+    message Volume {
+        double length = 1;
+        double width = 2;
+        double height = 3;
+        DimensionUnit unit = 4;
+    }
+
+    message Weight {
+        double value = 1;
+        WeightUnit unit = 2;
+    }
+
+    int32 id = 1;
+    string description = 2;
+    Address destinationAddress = 3;
+    Volume volume = 4;
+    Weight grossWeight = 5;
+}
